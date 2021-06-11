@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package": "npm run -s package-python && npm run -s package-electron && npm run -s package-cleanup",
+    "package": "npm run -s package-python && npm run -s package-electron && npm run -s package-cleanup-windows",
     "package-python": "pyinstaller -w --onefile --add-data web_app/app/templates;templates --add-data web_app/app/static;static web_app/run_app.py --distpath dist-python",
     "package-electron": "electron-builder",
-    "package-cleanup": "rm -rf build && rm -rf run_app.spec && rm -rf dist-python"
+    "package-cleanup-linux": "rm -rf build && rm -rf run_app.spec && rm -rf dist-python",
+    "package-cleanup-windows": "rmdir /s /q build && del /s /q run_app.spec && rmdir /s /q dist-python"
   },
   "build": {
     "appId": "com.electron-flask.my-app",
