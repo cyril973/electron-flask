@@ -1,4 +1,3 @@
-name: electron-flask2
 channels:
   - conda-forge
   - defaults
