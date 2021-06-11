@@ -1,2 +1,12 @@
-conda list -e > requirements.txt
-conda install -n <env_name> requirements.txt
+Exporter l'environnement Conda :
+    conda env export > environment.yml
+
+
+importer un environnement conda
+ - modifier le "name" dans le fichier environment.yml
+ - exécuter :
+        conda env create -f environment.yml
+        rattacher le projet à un environnement existant
+        Vérifier avec : conda env list
+        conda init
+        conda activate "env-name"

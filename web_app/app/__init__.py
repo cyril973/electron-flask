@@ -2,12 +2,14 @@ from flask import Flask, render_template
 import os
 import sys
 from app.home import home as home_blueprint
+# from web_app.app.home import home as home_blueprint
+from flask_bootstrap import Bootstrap
 
 
 def init_extensions(app: Flask):
     # use .init_app() on your extensions to register them on
     # the Flask instance
-    pass
+    bootstrap = Bootstrap(app)
 
 
 def get_root_dir_abs_path() -> str:
